@@ -29,8 +29,8 @@ while (true) {
 		// Prepare POST request
 		$request_data = http_build_query(
 		    array(
-		        'email'     => $tumblr_email,
-		        'password'  => $tumblr_password,
+				'email'     => $tumblr_email,
+				'password'  => $tumblr_password,
 				'post-id'	=> $id
 		    )
 		);
