@@ -9,9 +9,9 @@
 // david@ulevitch.com
 
 // Authorization info
-$tumblr_email    = 'EMAIL';
+$tumblr_email	 = 'EMAIL';
 $tumblr_password = 'PASSWORD';
-$tumblr_url 	 = 'URL';
+$tumblr_url		 = 'URL';
 
 while (true) {
 	$doc = new DOMDocument();
@@ -28,11 +28,11 @@ while (true) {
 		echo "Deleting Post ID: $id ... ";
 		// Prepare POST request
 		$request_data = http_build_query(
-		    array(
-				'email'     => $tumblr_email,
-				'password'  => $tumblr_password,
+			array(
+				'email'		=> $tumblr_email,
+				'password'	=> $tumblr_password,
 				'post-id'	=> $id
-		    )
+			)
 		);
 		// Send the POST request (with cURL)
 		$c = curl_init('http://www.tumblr.com/api/delete');
@@ -45,11 +45,11 @@ while (true) {
 
 		// Check for success
 		if ($status == 201 || $status == 200) {
-		    echo "Success!\n";
+			echo "Success!\n";
 		} else if ($status == 403) {
-		    echo "Bad email or password\n";
+			echo "Bad email or password\n";
 		} else {
-		    echo "Error: $status: $result\n";
+			echo "Error: $status: $result\n";
 		}
 	}
 }
